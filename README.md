@@ -8,7 +8,6 @@ In this repo, I'll try to talk about Data Structures
    - Linear Search.
    - Binary Search.
    - Mathematical Analysis of Linear and Binary Search.
-
 5. Binary Search Trees.
 6. Introduction to Graphs.
 7. Appendix: Introduction to Mathematical Analysis of Algorithms.
