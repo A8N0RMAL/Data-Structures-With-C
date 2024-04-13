@@ -73,7 +73,7 @@ mention later how they should be defined.
 ![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/355d6dd2-bf65-42ac-8dd5-47977dd3d03d)
 - The execution time doesn't depend on n, therefore the complexity is: θ(1)
 - top is the index of the first available place.
-
+---
 - For now we have created a stack but we don't initialized it yet.
 - CreateStack(s) -> for Initializing stack, we already created the stack at the previous step.
 - So, we will initialize stack using CreateStack(s), this function exactly initializing stack not creating stack we have already created it in the first step.
