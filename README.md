@@ -62,3 +62,26 @@ In this repo, I'll try to talk about Data Structures
 
 ---
 
+#### Stacks: Array-based implementation I
+- MAXSTACK should be defined in the User Level.
+- For the moment forget about them. We will
+mention later how they should be defined.
+![0](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0837b60c-01e6-49d1-a1bf-38df256e3d09)
+
+![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/ffde05fd-a1b1-443b-8fa6-20c2c2edf0f4)
+- This is not the way we gonna use CreateStack() with, because the original stack will remain the same, so we have to pass the stack address to the function and deal with it using a pointer *PS
+![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/355d6dd2-bf65-42ac-8dd5-47977dd3d03d)
+- The execution time doesn't depend on n, therefore the complexity is: θ(1)
+- top is the index of the first available place.
+
+- For now we have created a stack but we don't initialized it yet.
+- CreateStack(s) -> for Initializing stack, we already created the stack at the previous step.
+- So, we will initialize stack using CreateStack(s), this function exactly initializing stack not creating stack we have already created it in the first step.
+- ps->top =0 or *ps.top=0
+- ps->Entry[ps->top++]=e : put e on top and increase top by 1
+- if top = -1, ps->Entry[++ps->top]=e : increase top by 1and put e on top .
+![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/772b56ef-dda6-4cfb-bd83-b2b2fa607ea2)
+
+---
+
+
