@@ -68,12 +68,14 @@ In this repo, I'll try to talk about Data Structures
 mention later how they should be defined.
 ![0](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0837b60c-01e6-49d1-a1bf-38df256e3d09)
 ---
+##### CreateStack()
 ![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/ffde05fd-a1b1-443b-8fa6-20c2c2edf0f4)
 - This is not the way we gonna use CreateStack() with, because the original stack will remain the same, so we have to pass the stack address to the function and deal with it using a pointer *PS
 ![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/355d6dd2-bf65-42ac-8dd5-47977dd3d03d)
 - The execution time doesn't depend on n, therefore the complexity is: θ(1)
 - top is the index of the first available place.
 ---
+#### Push()
 - For now we have created a stack but we don't initialized it yet.
 - CreateStack(s) -> for Initializing stack, we already created the stack at the previous step.
 - So, we will initialize stack using CreateStack(s), this function exactly initializing stack not creating stack we have already created it in the first step.
@@ -81,12 +83,17 @@ mention later how they should be defined.
 - ps->Entry[ps->top++]=e : put e on top and increase top by 1
 - if top = -1, ps->Entry[++ps->top]=e : increase top by 1and put e on top .
 ![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/772b56ef-dda6-4cfb-bd83-b2b2fa607ea2)
-
+---
 - The user has to check before(Pre) and after(post conditions) pushing into the stack.
 - Pre: The stack is initialized and not full.
 - Post: The element e has been stored at the top of the stack; and e does not change.
 ![4](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/9c027ebe-237e-490d-acc6-e9fb9c1394a0)
-
-
+---
+#### StackFull()
+- We have passed Stack &S by reference to save time and space.
+- It could be StackFull(S) but this wastes memory and time of copying.
+![5](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/16ee2d36-08dd-4bd6-bca9-3f2bfd1e7310)
+---
+- 
 ---
 
