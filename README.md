@@ -112,7 +112,7 @@ mention later how they should be defined.
 
 ---
 #### StackSize(&s)
-- Another accessing mechanism that you are gonna use it as a user is that u nedd to konw the stack size.
+- Another accessing mechanism that you are gonna use it as a user when u need to konw the stack size.
 ![10](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/24e4d6b2-5d6c-4fc3-b9a5-209ce4e07d64)
 - Let's take a look at Pre and Post conditions for StackSize.
 - Pre: The stack is initialized.
