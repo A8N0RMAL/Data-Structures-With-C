@@ -96,6 +96,7 @@ mention later how they should be defined.
 ---
 #### Pop(&e, &s)
 ![6](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/da4a775d-10d8-4ed6-8bd8-0acc1c770e3b)
+
 ---
 - Let's take a look at Pre and Post conditions for Pop from the stack.
 - Pre: The stack is initialized and not empty.
@@ -104,9 +105,11 @@ mention later how they should be defined.
 ---
 #### StackEmpty(&s)
 ![8](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/18220e85-7ec9-4afa-92dc-3d24fa68e3cc)
+
 ---
 #### StackTop(&e, &s)
 ![9](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/37a3434b-fc1a-4731-8b1f-c2af663d7675)
+
 ---
 #### StackSize(&s)
 - Another accessing mechanism that you are gonna use it as a user is that u nedd to konw the stack size.
@@ -114,4 +117,10 @@ mention later how they should be defined.
 - Let's take a look at Pre and Post conditions for StackSize.
 - Pre: The stack is initialized.
 - Post: returns how many elements exists.
+---
+#### ClearStack(&s)
+- Let's take a look at Pre and Post conditions for StackSize.
+- Pre: stack is initialized.
+- Post: destroy all elements. (stack looks initialized).
+![11](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/52761b76-c1a1-48ca-92f9-2cabf4d6315a)
 ---
