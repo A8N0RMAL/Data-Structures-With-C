@@ -82,6 +82,11 @@ mention later how they should be defined.
 - if top = -1, ps->Entry[++ps->top]=e : increase top by 1and put e on top .
 ![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/772b56ef-dda6-4cfb-bd83-b2b2fa607ea2)
 
----
+- The user has to check before(Pre) and after(post conditions) pushing into the stack.
+- Pre: The stack is initialized and not full.
+- Post: The element e has been stored at the top of the stack; and e does not change.
+![4](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/9c027ebe-237e-490d-acc6-e9fb9c1394a0)
 
+
+---
 
