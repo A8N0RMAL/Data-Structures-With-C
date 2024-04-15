@@ -105,5 +105,13 @@ mention later how they should be defined.
 #### StackEmpty(&s)
 ![8](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/18220e85-7ec9-4afa-92dc-3d24fa68e3cc)
 ---
-
-
+#### StackTop(&e, &s)
+![9](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/37a3434b-fc1a-4731-8b1f-c2af663d7675)
+---
+#### StackSize(&s)
+- Another accessing mechanism that you are gonna use it as a user is that u nedd to konw the stack size.
+![10](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/24e4d6b2-5d6c-4fc3-b9a5-209ce4e07d64)
+- Let's take a look at Pre and Post conditions for StackSize.
+- Pre: The stack is initialized.
+- Post: returns how many elements exists.
+---
