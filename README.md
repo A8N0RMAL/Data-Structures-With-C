@@ -143,3 +143,5 @@ mention later how they should be defined.
 - Push takes the element itself and a pointer to the stack
 - Pre: The stack is initialized and not full.
 - Post: The element e has been stored at the top of the stack; and e does not change.
+![StackTopPush](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/e77cdf4e-7d80-46fe-80de-b78cde9f5415)
+![StackTopPush_](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c624d672-8129-4384-ac20-7f74d51db24e)
