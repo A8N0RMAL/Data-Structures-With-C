@@ -62,7 +62,7 @@ In this repo, I'll try to talk about Data Structures
 
 ---
 
-#### Stacks: Array-based implementation I
+#### Stacks: Array-based implementation
 - MAXSTACK should be defined in the User Level.
 - For the moment forget about them. We will
 mention later how they should be defined.
