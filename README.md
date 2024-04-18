@@ -137,6 +137,8 @@ mention later how they should be defined.
 - Pop takes a pointer to the element and a pointer to the stack.
 - Pre: The stack is initialized and not empty.
 - Post: The last element entered is returned.
+![StackTopPop](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a47121c3-317a-43e8-b18e-32d443db5393)
+![StackTopPop_](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/5375c8a2-ea21-4f2a-bdb8-4f1c14c51ff7)
 
 - Push takes the element itself and a pointer to the stack
 - Pre: The stack is initialized and not full.
