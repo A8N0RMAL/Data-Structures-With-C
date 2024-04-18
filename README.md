@@ -145,3 +145,10 @@ mention later how they should be defined.
 - Post: The element e has been stored at the top of the stack; and e does not change.
 ![StackTopPush](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/e77cdf4e-7d80-46fe-80de-b78cde9f5415)
 ![StackTopPush_](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c624d672-8129-4384-ac20-7f74d51db24e)
+---
+- StackEntry and MAXSTACK should be defined in the User Level, because they concern the uer.
+- Also, they have to be defined in the implementation level, because they are referenced in Stack.cpp
+- Therefore, they have to be defined in Stack.h which is included in both Stack.cpp and the user main file.
+- So, the main file will compile even if stack.cpp is not compiled yet.
+![Stack h](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/52025350-be82-4628-908f-b4638ac2db08)
+---
