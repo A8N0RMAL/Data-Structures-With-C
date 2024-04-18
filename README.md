@@ -124,3 +124,20 @@ mention later how they should be defined.
 - Post: destroy all elements. (stack looks initialized).
 ![11](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/52761b76-c1a1-48ca-92f9-2cabf4d6315a)
 ---
+#### TraverseStack(&s, &Display)
+- Pre: The stack is initialized.
+- &s only for efficiency as said before.
+![TraverseStack](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/133ee22c-91db-4539-80cf-bf0b9e41e95b)
+---
+#### StackTop(&e, &s)
+- How to write the function StackTop in the user level? (e.g., if you do not have the source code of the implementation)
+![StackTopUserLevel](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/168e149a-c517-4eb9-b3b8-c9994f340948)
+
+##### Why interface, Pre, Post are crucial: 
+- Pop takes a pointer to the element and a pointer to the stack.
+- Pre: The stack is initialized and not empty.
+- Post: The last element entered is returned.
+
+- Push takes the element itself and a pointer to the stack
+- Pre: The stack is initialized and not full.
+- Post: The element e has been stored at the top of the stack; and e does not change.
