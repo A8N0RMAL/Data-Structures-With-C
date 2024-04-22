@@ -213,4 +213,43 @@ mention later how they should be defined.
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/968d732b-f04a-4646-8811-ab864d19def2)
 - For any function that does not change the stack there is no problem in passing the stack itself s rather than a pointer to it ps. This will not copy the elements as opposed to the array-based implementation. However, of course, we do not do that to keep the code at the user level unchanged.
 ---
-
+#### ClearStack(&s)
+- Let's take a look at Pre and Post conditions for ClearStack.
+- Pre: The stack exists.
+- Post: All the elements are freed.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a7447c66-1d22-489c-b118-a9c6af5b6162)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a2ef3889-1835-4101-84fb-7fa9f51bd3a7)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cc31caac-1c7d-4b49-85de-cc08b0c8f574)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4908bf5d-2f31-45b4-b71f-0ade0e354eb1)
+- You can replace qn by ps->top
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1e1cfa4d-d500-4927-8d75-45a36aa32861)
+- Complexity is: θ(N).
+- Total time = N * time of one loop.
+---
+#### TraverseStack(&s, &pf)
+- Let's take a look at Pre and Post conditions for TraverseStack.
+- Pre: The stack exists.
+- Post: Function is passed to process every element.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cab1f7cc-4abe-4cf7-a5c8-ccb87f94dc3a)
+---
+#### StackSize(&s)
+- Let's take a look at Pre and Post conditions for StackSize.
+- Pre: The stack is initialized.
+- Post: returns how many elements exists.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/f4ba1d01-f7fa-4063-a1a3-a03dc082c652)
+- Comments: This function is (N), i.e., the execution time is proportional to the size! Because, we have to traverse the stack node- by-node to count. (this statement is not precise).
+- Can we modify the structure to decrease the complexity of this algorithm?
+- We add extra field, called, size in struct stack. Then, we need to add just one statement to: CreateStack, Pop, Push, ClearStack.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/6b01fcaa-5f6b-4187-b8cd-288bfa949f28)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7dd1ee60-af7e-461e-9f57-eb20f20d644e)
+- What happened is that, we added extra field in the data structure, which is size (2 bytes). But, this saves us time by reducing the complexity of the algorithm of the function StackSize.From (N) to (1).
+- This is a typical trade-off between time and space.
+---
+- Comparison between the array-based and the linked implementation: "Which is always better?" is a wrong question!
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/62acb1ed-8f7e-4c91-80cf-5fd86747bc45)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/82a01f22-17da-4d49-bfaa-a0a2c9f1805e)
+- Then, there are advantages and disadvantages for every implementation. Which one is better really depends on the application.E.g.,
+- If ClearStack is extensively used then, may be array-based implementation is better.
+- If the memory is very limited, then may be the linked implementation is better.
+- The rule is: Know very well the pros and cons of each implementation and decide based on your application needs.
+---
