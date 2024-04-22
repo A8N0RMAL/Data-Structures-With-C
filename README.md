@@ -152,3 +152,64 @@ mention later how they should be defined.
 - So, the main file will compile even if stack.cpp is not compiled yet.
 ![Stack h](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/52025350-be82-4628-908f-b4638ac2db08)
 ---
+#### Stacks: Linked-based implementation
+- Linked stacks (to overcome fixed size limitations), Just get the idea now, don't worry about details.
+![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0d8d52c0-7da5-4aa7-a3e9-ebfa8d6927e2)
+---
+- Let's take a look at how to insert a node(graphically for now).
+![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/79ed9096-edf9-4d29-ad01-49f03b9f0214)
+![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b808f7af-7ed8-4a18-8627-06ddf9b3f3b1)
+![4](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/260ad052-807e-43ad-b098-dba73877327d)
+---
+- Let's take a look at how to insert a node(graphically for now).
+![5](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c1dfa439-c1dc-452d-8ff1-4345ec15190d)
+![6](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/8a56f180-da2f-412c-b217-537117602fad)
+---
+- Type Definition:
+![7](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c7a8f71d-b134-44aa-bee6-fdc791bed177)
+- Why not? Typedef StackNode *Stack;
+1. To make logical distinction between the stack itself and its top, which points to a node.
+2. To be consistent with the definitions of other DS.
+3. For upgradability (adding more functions) that may need other other pieces pieces of information to be saved than top. (we will see).
+---
+#### CreateStack(&e)
+![9](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/86c0311f-5ff5-47b3-8227-8e651bc14398)
+
+- The execution time doesn't depend anything, therefore the complexity is: θ(1)
+---
+#### Push(e, &s)
+- Let's take a look at Pre and Post conditions for Push.
+- Pre: The stack exists and it it initialized.
+- Post: The argument item has been stored at the top of the stack.
+![10](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cc2ba0b2-855e-493e-b7a4-0599e867f020)
+![11](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b053baf5-0093-4d8e-8cb2-c2b9dc48fd5c)
+![12](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/88363a6e-6e4e-4cd0-a6f5-a3941179f87d)
+---
+#### Pop(&e, &s)
+- Let's take a look at Pre and Post conditions for Pop.
+- Pre: The stack exists and it it not empty.
+- Post: The item at the top of the stack has been removed and returned in *pe.
+![13](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/ae1c3a56-bb03-4131-a704-df78a10f79ab)
+![14](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/33e5f151-d848-48af-8bfc-22fd8ce4a4fd)
+![15](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/e7e7757c-118b-4835-9237-ebb8c723bed5)
+---
+- Always take care of special cases: If you have just one element:
+![16](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1f3d39e6-54c3-4b05-855f-703b74093ed8)
+![17](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c5f43a57-d0b3-43bf-a4b9-14eb9c5f55d5)
+---
+#### StackEmpty(&s)
+- Let's take a look at Pre and Post conditions for StackEmpty.
+- Pre: The stack exists.
+- Post: returns the status, 1 or 0.
+- Complexity is: θ(1).
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/6b6178eb-8d18-4222-87f7-6118b8756168)
+---
+#### StackFull(&s)
+- Let's take a look at Pre and Post conditions for StackFull.
+- Pre: The stack exists.
+- Post: returns the status, 1 or 0(In this case it is always 0).
+- Complexity is: θ(1).
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/968d732b-f04a-4646-8811-ab864d19def2)
+- For any function that does not change the stack there is no problem in passing the stack itself s rather than a pointer to it ps. This will not copy the elements as opposed to the array-based implementation. However, of course, we do not do that to keep the code at the user level unchanged.
+---
+
