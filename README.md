@@ -161,7 +161,7 @@ mention later how they should be defined.
 ![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b808f7af-7ed8-4a18-8627-06ddf9b3f3b1)
 ![4](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/260ad052-807e-43ad-b098-dba73877327d)
 ---
-- Let's take a look at how to insert a node(graphically for now).
+- Let's take a look at how to delete a node(graphically for now).
 ![5](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c1dfa439-c1dc-452d-8ff1-4345ec15190d)
 ![6](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/8a56f180-da2f-412c-b217-537117602fad)
 ---
@@ -172,15 +172,16 @@ mention later how they should be defined.
 2. To be consistent with the definitions of other DS.
 3. For upgradability (adding more functions) that may need other other pieces pieces of information to be saved than top. (we will see).
 ---
-#### CreateStack(&e)
+#### CreateStack(&s)
 ![9](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/86c0311f-5ff5-47b3-8227-8e651bc14398)
 
 - The execution time doesn't depend anything, therefore the complexity is: θ(1)
 ---
 #### Push(e, &s)
 - Let's take a look at Pre and Post conditions for Push.
-- Pre: The stack exists and it it initialized.
+- Pre: The stack exists and it is initialized.
 - Post: The argument item has been stored at the top of the stack.
+- pn is just a temporary pointer holding the location of stack node to free it(Considering to OS this place is free).
 ![10](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cc2ba0b2-855e-493e-b7a4-0599e867f020)
 ![11](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b053baf5-0093-4d8e-8cb2-c2b9dc48fd5c)
 ![12](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/88363a6e-6e4e-4cd0-a6f5-a3941179f87d)
