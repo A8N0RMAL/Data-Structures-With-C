@@ -17,7 +17,7 @@ In this repo, I'll try to talk about Data Structures
 
 ---
 
-#### Why Data Structures
+### Why Data Structures
 ##### Stack Structure (LIFO) that's for Last in First out.
 ![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cb7eb037-f22b-4e47-9a7b-4791b294541d)
 
@@ -37,7 +37,7 @@ In this repo, I'll try to talk about Data Structures
 - All these combinations in a structure called Graph structure.
 ![4](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1a0eb7b0-a7ec-4b92-88de-b505da0739ce)
 
-#### Warming up:
+### Warming up:
 #### Shifting from "Hello World"-like programs to structured programs
 ##### Guidelines for choosing variable names:
 1. Give special care to the choice of names for functions, and constants.
@@ -62,7 +62,7 @@ In this repo, I'll try to talk about Data Structures
 
 ---
 
-#### Stacks: Array-based implementation
+### Stacks: Array-based implementation
 - MAXSTACK should be defined in the User Level.
 - For the moment forget about them. We will
 mention later how they should be defined.
@@ -152,7 +152,7 @@ mention later how they should be defined.
 - So, the main file will compile even if stack.cpp is not compiled yet.
 ![Stack h](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/52025350-be82-4628-908f-b4638ac2db08)
 ---
-#### Stacks: Linked-based implementation
+### Stacks: Linked-based implementation
 - Linked stacks (to overcome fixed size limitations), Just get the idea now, don't worry about details.
 ![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0d8d52c0-7da5-4aa7-a3e9-ebfa8d6927e2)
 ---
@@ -252,4 +252,113 @@ mention later how they should be defined.
 - If ClearStack is extensively used then, may be array-based implementation is better.
 - If the memory is very limited, then may be the linked implementation is better.
 - The rule is: Know very well the pros and cons of each implementation and decide based on your application needs.
+---
+### Stacks applications: Recursion
+- Program M starts, then calls A, which calls B, which ends then A calls C...
+- All local parameters and return address of each function has to be stored. •Return is in LIFO order.
+- Space required is the height of this tree.
+- OS has to use a stack to keep track of this storage sequence.
+- When a function calls itself, this is recursion.
+- Still stack is needed, no difference between A call B, or B calls itself.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b393ac69-f5b8-41dc-9fba-6a0afd3d80b0)
+---
+- Applications: Towers of Hanoi, a game of 19th century.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/565ca578-044a-4942-a58c-e05a9a03370a)
+#### Solution:
+1. To move the largest disk from 1 to 3, we have to move first all others from 1 to 2 !!!
+2. Move the largest from 1 to 3.
+3. Move all others from 2 to 3.
+- Then the solution is:
+- MoveDisks (6, 1, 2, 3); "Move disk 7 from 1 to 3′′ MoveDisks (6, 2, 3, 1);
+- This is the idea of recursion; define a base step then do the same thing again.
+- This is the same concept of divide and conquer: To solve a problem, we split it into smaller and smaller parts.
+---
+#### Every recursive process consists of two parts:
+1. A smallest, base case that is processed without recursion.
+2. A general method that reduces a particular case to one or more of the smaller cases, thereby making progress toward eventually reducing the problem all the way to the base case.
+void MoveDisks (int count, int start, int finish, int temp);
+- Pre Conditions:
+- There are at least count disks on the tower start.
+- The top disk on each of towers temp and finish is larger than any of the top count disks on tower start.
+- Post Conditions:
+- The top count disks on start have been moved to finish;
+- temp (used for temporary storage) has been returned to its starting position.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/d6d33cc2-6bbb-44fe-ad30-311c816561c4)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0a9b055d-b46b-448d-bae4-512596d3fa8d)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/974f531b-5fee-47b3-aa12-aba2e2c6dd42)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/43290931-c56c-4eb4-b961-f855e226df58)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1676e9f3-324a-4763-8692-695cbd762997)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/3ef070d5-7d5c-4002-92cf-9712f1d66a06)
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/48d35e8c-711d-441a-873e-6849f6bb3ae7)
+
+- The largest size of the stack until the function returns to the main program is 4. But the number of function calls is:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/23ff0646-7274-412a-9d30-2d010f676bfd)
+- If count = 64 (for example), there will be no stack overflow problem. But the number of steps = the number of function calls (since every function has one printf) = 1.6 E19 !!!
+---
+- Can we write the function Move iteratively, i.e., not recursively?
+- In this case, we will find that we really need to build a stack. We will find that the nature of the problem necessitates that we first solve the problem at size count-1 then return back to the original problem. To return back we had to save it in a stack!
+- In such cases defining the problem recursively is much better, since you let the OS build the stack itself which is much more efficient than your stack.
+- However, there are some cases in which solving the problem iteratively is better if the iterative algorithm does not need a stack. Hence, solving it recursively builds an unnecessarily stack, which wastes memory and time consumed in function return. Example is the factorial.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/faec35a7-772c-40ae-b30e-496b3efda811)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/6032180a-8a7c-4a64-b63e-e80ec3e95d93)
+
+- The recursive version: First convince yourself that Factorial really returns the factorial except for the base condition:
+
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/614a4ebe-aa17-4ee5-9ca3-4f38ed560363)
+
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cadad480-9e38-4152-9f75-fe2bccbf6093)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b43da0f2-e542-4812-b70a-8aef9c22a064)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/2b9129ff-8f50-4fe4-a6fb-6a75909a60d5)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/d6f2d7c6-226a-4cfa-9cd1-afc49d99e861)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/5f0ced60-45b7-4bbd-8235-e4445240813c)
+- Now:
+1. what is the need of this built stack? Why do we exhaust the memory with all these formal parameter?
+2. Also, why do we waste the time of function calls and returns. In this case, absolutely the iterative version is faster and more economic in memory utilization.
+- The recursion tree is simply a chain, which means that designing the algorithm does not need recursion.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c62b68ff-1752-41ab-9251-c2ed37eb2231)
+---
+- More extreme example for un-necessary recursion, the Fibonacci function;
+- although many thinks that it is the best example for recursion!!
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b670fd99-d1b2-438e-aef3-e0e2ee9de918)
+- Although the mathematical form of the function itself is recursive (this what tempts some people to code it recursively), however we can find an iterative algorithm for solving it. First, we need to analyze the recursive version.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4732dbf4-15f8-4062-9249-0db854d46560)
+---
+- Recursion Tree helps determining whether the recursion is necessary or not.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/525386c5-85ac-42d8-b10a-de98c6d3f99f)
+1. The common problems with unnecessarily stack building are:
+- waste of time
+- waste of memory.
+2. For this particular function we have another serious problem, which is needlessly repeating the Fibonacci of many numbers.
+- The complexity is exponential, i.e., O(c")
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b4fd540a-db22-4f5c-9085-a9dc6c30d6b7)
+
+---
+#### Designing Recursive Algorithms
+- Find the key step. Begin by asking yourself, "How can this problem be divided into parts?" or "How will the key step in the middle be done?"
+- Check termination. Verify that the recursion will always terminate. Be sure that your algorithm correctly handles extreme cases.
+- Draw a recursion tree. The height of the tree is closely related to the amount of memory that the program will require, and the total size of the tree reflects the number of times the key step will be done.
+- Find a stopping rule. This stopping rule is usually the small, special case that is trivial or easy to handle without recursion.
+- Outline your algorithm. Combine the stopping rule and the key step, using an if statement to select between them, while convincing yourself that the function performs well in the non-base case.
+---
+#### Execution tree and stack size:
+- The OS saves all the parameters of every function and the return address in a stack, so that it returns in LIFO order (See the top of stack in figure).
+- The stack size is the depth of the tree.
+- The number of calls, which determines the complexity and the execution time, is the number of nodes in the tree.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4bc63d58-92c5-42a6-8105-dacb84835fb9)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/66c33999-b988-4131-ab96-9cec4d50ae4f)
+---
+- Tail Recursion : The last statement in a function is a call to itself.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b2ef8c2f-c88a-4519-a902-be0f81c9461a)
+- No need to keep the space of the function in the stack, since it will return to itself. So, just pass the new parameters to the function itself. This reduces the stack size not the complexity of the algorithm.
+- This call can be eliminated by reassigning the calling parameters to the values specified in the recursive call, and then repeating the whole function.
+##### With tail recersion
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/dda40dbd-af95-4053-8c13-c37f11326374)
+
+---
+#### Removing the tail recursion
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/5a8b90ed-e687-4aec-9ca2-1d204403a527)
+
 ---
