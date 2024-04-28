@@ -362,3 +362,38 @@ void MoveDisks (int count, int start, int finish, int temp);
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/5a8b90ed-e687-4aec-9ca2-1d204403a527)
 
 ---
+### Stacks applications: Polish Notation
+- Polish Notation: application on stacks.
+- We read and write Infix, however we compute in Postfix !!
+- Computer has to convert to, e.g., Postfix before evaluation.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/3c397b14-0e7e-4e0f-8d11-eb1ac998ce5c)
+---
+- How do we really do it?
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a931688c-9888-4ec7-9c09-560b4b65b93f)
+---
+- InfixToPostfix.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/776798d7-c6e8-4fca-a7df-f55773176d12)
+---
+- Obvious Limitations:
+1. Only single digit integers.
+2. Only positive integers.
+3. No unary operators allowed.
+4. No brackets !!!
+5. No handling for invalid expr.
+- Extra operators.
+- Invalid Ordering.
+6. No characters allowed.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/9ba71b44-8fd3-4a75-98ca-2ab6a363841b)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0ae2ebb4-8d4d-47c4-802f-ed057a64fb3b)
+---
+- Big Surprise!
+- We cannot combine both routines, InfixToPostfix and Evaluate Postfix, in a single program because of different element types!!!
+- Solutions will be provided in: ("Abstraction and Implementation Related Issues").
+- Until we reach it, a good programming style to cope with different types and configurations is via compiler directives, e.g., #define, #ifdef, ...
+- This way, you will change only a single line of code instead changing the whole Stack.h.
+![7](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/3235f5be-cc5f-4b89-bc1e-437393875e1b)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/e2238143-de7f-405f-a2fd-5d7252e2b9ad)
+---
+
+
+
