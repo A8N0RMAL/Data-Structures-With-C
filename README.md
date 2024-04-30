@@ -468,6 +468,8 @@ Customer comes, checks out and leaves
 
 ---
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/427cb978-548e-42cd-8598-3bea1a2c3bed)
+
+---
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a74725d4-66aa-4c96-8a25-70c55056db98)
 
 ---
