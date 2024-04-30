@@ -394,6 +394,80 @@ void MoveDisks (int count, int start, int finish, int temp);
 ![7](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/3235f5be-cc5f-4b89-bc1e-437393875e1b)
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/e2238143-de7f-405f-a2fd-5d7252e2b9ad)
 ---
+### Queues: Array-based implementation
+##### Motivation: Why Queue? First In First Out (FIFO)
+- In a queue,
+- new values are always added at the rear of the list.
+- values are removed from the opposite end of the list, the front.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/bb0e325b-8cbd-4c56-8bad-2ff08b0a3cb5)
+##### Examples of queues
+- checkout at supermarket
+- Toll Station
+Car comes, pays, leaves
+- Check-out in Big super market
+Customer comes, checks out and leaves
+- More examples: Printer, Office Hours,
+---
+##### E.g., Printing Queue
+- A.doc, B.doc, C.doc arrive to printer.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/81d30386-d698-422b-8369-e5feea13cc09)
+---
+##### Array Implementation1: Physical Model (Front is fixed as in physical lines)
+- Shifting all items to front in the array when dequeue operation. (Too Costly...)
+- Why this was not a problem in the array implementation of Stacks?
+- Because we were dealing with top.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/f494e9c0-bc54-4785-9a2b-b57e13238eb7)
+---
+##### Array Implementation2: Linear Model (Two indices, front and rear) 
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c1110e1d-66fe-4ee9-bac9-b707d8e68198)
 
+- The problem is that there will be many empty places in the front of array and rear is always incremented.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/dba004b5-26c5-4760-b875-43027d262fc5)
 
+---
+##### Array Implementation 3: Circular Implementation
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/96cb0cff-a052-4548-8857-e3bab30ebb41)
 
+---
+##### Checking the boundary conditions
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/370f5157-534c-4b9c-889a-74dd6fda72c3)
+
+- Better solution: Use indicator variable to distinguish between Empty and Full conditions.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/da02dbb3-b66b-48e6-90b5-137419e16629)
+
+---
+##### Again: Definitions, where every thing should start from!
+- Definition: type is a set of values and a set of operations on those values.
+- Example: We can define a datatype boolean that takes the set of values {0, 1} together with the operations AND, OR, and NOT.
+- Example: int, in C, is the set consisting all of the integers between INT MIN (-(2^15 — 1)) and INT MAX (2^15 – 1), which are defined in the header file limits.h
+- Definition: A Sequence of length 0 is empty. A sequence of length n ≥ 1 of elements from a set T is an ordered pair (Sn- 1,t) where Sn-1 is a sequence of length n-1 of elements from T, and t is an element of T.
+- Definition: A queue of elements of type T is a finite sequence of elements of T together with the following operations:
+1. Create the queue, leaving it empty.
+2. Determine whether the queue is empty or not.
+3. Determine whether the queue is full or not.
+4. Find the size of the queue.
+5. Append a new entry onto the top of the queue, provided the queue is not full.
+6. Retrieve the front entry in the queue, provided the queue is not empty.
+7. Serve (and remove) the front entry from the queue, provided the queue is not empty.
+8. Traverse the queue, visiting each entry.
+9. Clear the queue to make it empty.
+---
+- Queue q;
+![12](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/2c308422-c5f2-4f3d-8d1e-4b59d522322d)
+---
+- CreateQueue(&q)
+![13](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b4816866-0184-4616-9c77-b7ac0f0dda67)
+---
+- Append(e, &q)
+![15](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/71014ac6-2b36-4eb5-a8ff-d06c94704239)
+---
+- Serve(e, &q)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/348663d6-bb16-438c-886d-b4ebf4fdbcf5)
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/01f14b5d-cbf9-44c4-abd8-d62f950a0c00)
+
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/427cb978-548e-42cd-8598-3bea1a2c3bed)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a74725d4-66aa-4c96-8a25-70c55056db98)
+
+---
