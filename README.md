@@ -506,7 +506,7 @@ Customer comes, checks out and leaves
 - Always ttake care of special cases: Only one element exists.
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cef94c96-60be-44ef-9173-99e5a1334b60)
 ---
-#### QueueEmpty(&q), QueueFull(&q), QueueSize()
+#### QueueEmpty(&q), QueueFull(&q), QueueSize(&q)
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/087b9006-3554-4a5e-b330-e589298b568e)
 
 ---
