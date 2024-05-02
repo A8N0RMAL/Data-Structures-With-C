@@ -491,7 +491,7 @@ Customer comes, checks out and leaves
 ![5](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/148a3727-e201-481e-957f-4de349ff29ae)
 
 ---
-#### CreqteQueue(&q)
+#### CreateQueue(&q)
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/079ddbee-4201-435b-ac7d-6881eb46f42f)
 
 ---
@@ -503,7 +503,7 @@ Customer comes, checks out and leaves
 #### Serve(&e, &q)
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/eb48938b-908f-4d06-b4ec-2fe76bddeac9)
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4c209dff-116a-42cf-8f26-dd7704260e1b)
-- Always ttake care of special cases: Only one element exists.
+- Always take care of special cases: Only one element exists.
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cef94c96-60be-44ef-9173-99e5a1334b60)
 ---
 #### QueueEmpty(&q), QueueFull(&q), QueueSize(&q)
