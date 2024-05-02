@@ -1,4 +1,4 @@
-# Data-Structures-With-C
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0bfd16c3-1903-4ee1-b137-2463e1239762)# Data-Structures-With-C
 In this repo, I'll try to talk about Data Structures
 ### Course Outlines
 1. Stacks (array-based and linked based implementations).
@@ -472,4 +472,52 @@ Customer comes, checks out and leaves
 ---
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a74725d4-66aa-4c96-8a25-70c55056db98)
 
+---
+### Queues: Linked-based implementation
+##### Linked Queues (to overcome fixed size limitations): Just get the idea now, do not worry about details.
+![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/f8f4ff54-29f1-4e82-b28f-7131085d557b)
+
+---
+#### How to insert a node.
+![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/8640878f-0dc5-48a6-8f24-16c9b7cdb87a)
+
+---
+#### How to serve a node.
+![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4809c6e2-45ad-42d6-be27-3adcddcecc05)
+![4](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/2387a212-ebbd-40cc-a6e2-4c23d3f8a665)
+
+---
+#### Type Definition:
+![5](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/148a3727-e201-481e-957f-4de349ff29ae)
+
+---
+#### CreqteQueue(&q)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/079ddbee-4201-435b-ac7d-6881eb46f42f)
+
+---
+#### Append(e, &q)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/bf1af1d7-dc8d-4332-96ba-7849c994994a)
+- Always take care of special cases(queue is empty)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4f3bad34-a2da-45d4-888b-aa97a5b48c7b)
+---
+#### Serve(&e, &q)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/eb48938b-908f-4d06-b4ec-2fe76bddeac9)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4c209dff-116a-42cf-8f26-dd7704260e1b)
+- Always ttake care of special cases: Only one element exists.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/cef94c96-60be-44ef-9173-99e5a1334b60)
+---
+#### QueueEmpty(&q), QueueFull(&q), QueueSize()
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/087b9006-3554-4a5e-b330-e589298b568e)
+
+---
+#### ClearQueue(&q)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/818fd8ac-fc92-49e5-afb9-bce34d4fb7a9)
+
+---
+#### TraverseQueue(&q, &pf)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/41ce887a-d3a6-4130-a0a3-af89f1d501e7)
+
+---
+- Very important note for all linked structures. E.g., in Queues: In Push and Append we have to check for exhausted memory. The code can be modified to:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/87ad8fb9-a04c-4c45-82a2-09f963ad5daa)
 ---
