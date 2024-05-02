@@ -1,4 +1,4 @@
-![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0bfd16c3-1903-4ee1-b137-2463e1239762)# Data-Structures-With-C
+# Data-Structures-With-C
 In this repo, I'll try to talk about Data Structures
 ### Course Outlines
 1. Stacks (array-based and linked based implementations).
