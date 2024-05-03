@@ -521,3 +521,66 @@ Customer comes, checks out and leaves
 - Very important note for all linked structures. E.g., in Queues: In Push and Append we have to check for exhausted memory. The code can be modified to:
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/87ad8fb9-a04c-4c45-82a2-09f963ad5daa)
 ---
+### Abstraction & Implementation-Related Issues
+- How to use a queue, a stack, and other data structures with the same element type in the same program?
+- Since the element type of the stack, queue, and the main program is the same, we need to be more structured define this common element type in a separate file Global.h. In this file we should have all the definitions that are common to all of the three modules;
+![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/fd20bd60-1d97-440a-9d64-6d2e33ca2c75)
+---
+- Stack.cpp must include Stack.hand the latter includes Global.hwhy?
+- Queue.cpp must include eue.h and the latter includes Global.h.
+- Finally, Main.cpp includes all the three header files; why?
+- However, this will cause a "redefinition" error since the definitions in Global.hwill appear again in the other two included header files because they also include Global.h.
+- To resolve this problem, we need to start Global.h by:
+![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7d19ed62-09de-4cec-b836-9799e3e4e9d0)
+- These statements are "Preprocessor Commands" that are processed before compilation. More explanation will be provided in labs; you can also refer to your C language text book.
+---
+#### Notice that:
+- Each of the previous definition starts with "...of elements of type T is a finite sequence of elements of T together with the following operations:". it is apparent that Stacks, Queues, and Lists differ only in the set of operations defined on each of them.
+- The method of implementation is NOT mentioned in the definition.
+- The interface of the ADT (the header file in case of C programming, along with the pre- and post-conditions of the functions) defines the contract between users and implementers that provides a precise means of communicating what each can expect from the other.
+---
+- How can we selected among different implementations?
+- Should information about the efficiency of implementations be included in the interface so that the user chooses between different complexities (of course without letting him involved in the implementation details)?
+- Possible Solution:
+- Tell the user to write in Queue.h the following if he cares about memory utilization than speed
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/f56824d3-8477-4c22-9a32-80e09c3df2eb)
+- Then, in Queue.cpp write the two implementations of Queue with the following pre-processor:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/d8c52b76-cf6a-4bba-9b65-e6ffb5ce2525)
+---
+- What about hiding the type definition from the header files?
+- Possible Solution: we define the stack to be pointer to struct; this struct will be defined only in the stack.cpp
+![5](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/f017d0f8-4d29-493f-86ef-c4f71625e657)
+---
+- The only difference will be in the functions that change ps; namely, CreateStack and ClearStack.
+![6](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7db9d92e-0148-458a-be8d-532800a637a0)
+---
+- What about using different element types in the same ADT? For example, StackEntryl and StackEntry2?
+- Imagine!! So far we cannot use:
+- more than one stack with different homogeneous element type.
+- or even, a single stack of non- homogeneous element types.
+- Solution 1: (but very un-smart)
+- Combine the fields of the different possible types in one data type.
+- Add an extra field, name it etype, and give it a code for every type.
+- Then, it is the responsibility of the user level to check for etype.
+![7](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/10cdd0bb-a822-48f3-8bf6-5e7b27f7eda1)
+---
+- Solution 2: (Unions to save memory)
+![8](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7eae12b8-15f7-47d8-ad42-9d06d46468e1)
+---
+- Solution 3 (much smarter): not only solves the issue but also allows commercializing Stack.obj without the dependency on Stack.h
+- Notice: Push calls malloc(sizeof (StackNode)) and StackNode contains StackEntry, which was compiled already into Stack.obj. If the user defines another StackEntry in Global.h this will cause a runtime problem! (Try it home).
+- The solution, allows user for using both:
+- more than one stack with different homogeneous element type.
+- or even, a single stack of non- homogeneous element types.
+---
+![10](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/9511880a-64e9-4abd-a2f0-ec889280a2bd)
+
+---
+- Solution 4 (most efficient solution): using C++ (OOP language) supporting the definition of an object of undetermined type known by Templates:
+![11](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7b79e661-52ef-4c81-8a3d-89f34922918d)
+---
+- More subtle issues and some answers: We just open the door for deeper thinking and robust design.
+- Much more of these issues are out of the scope of our course. They are classified as low-level Software Engineering aspects.
+- Also, solutions to these raised issues are language dependent. E.g., the definition of the structure completely disappeared from the header file by defining a pointer to an undefined structure. In some languages, e.g., Java, this is not available since there is no pointers.
+- However, the student should be aware of them at the level that we discussed here.
+---
