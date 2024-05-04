@@ -602,7 +602,9 @@ Customer comes, checks out and leaves
 2. Determine whether the list is empty or not.
 3. Determine whether the list is full or not.
 4. Find the size of the list.
-5. Insert a new entry in the position 0 ≤ p ≤ size. 6. Delete an entry from the position 0 ≤ p ≤ size-1 7. Traverse the list, visiting each entry.
+5. Insert a new entry in the position 0 ≤ p ≤ size.
+6. Delete an entry from the position 0 ≤ p ≤ size-1
+7. Traverse the list, visiting each entry.
 8. Clear the list to make it empty.
 ---
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/97199239-5fa7-4872-802b-99db19ae40a3)
@@ -617,7 +619,9 @@ Customer comes, checks out and leaves
 1. The list pl has been created.
 2. not full.
 3. 0 <p< size.
+
 - Postcondition:
+
 1. e has been inserted at position p.
 2. all elements at old positions p, p+1, ..., size-1 are incremented by 1.
 3. size increases by 1.
