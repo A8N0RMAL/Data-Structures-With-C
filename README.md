@@ -584,3 +584,69 @@ Customer comes, checks out and leaves
 - Also, solutions to these raised issues are language dependent. E.g., the definition of the structure completely disappeared from the header file by defining a pointer to an undefined structure. In some languages, e.g., Java, this is not available since there is no pointers.
 - However, the student should be aware of them at the level that we discussed here.
 ---
+### Lists Array-based implementation
+#### Motivation:
+##### Why Lists?
+- In a general list:
+- new values are added in position determined by the user.
+- Element is removed from a position determined by the user.
+##### Important notice:
+- if we keep adding and removing from the first position (the head of the list) the general list will behave as a stack.
+- If we keep adding from one end and removing from another end the list will behave as a queue.
+##### Application:
+- In queues, sometimes we need a priority for some elements. We may need to put an emergency call prior to others.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/2fe6cef3-8597-4b8a-a9f1-e41bc4630b8e)
+---
+- Definition: A general list of elements of type T is a finite sequence of elements of T together with the following operations:
+1. Create the list, leaving it empty.
+2. Determine whether the list is empty or not.
+3. Determine whether the list is full or not.
+4. Find the size of the list.
+5. Insert a new entry in the position 0 ≤ p ≤ size. 6. Delete an entry from the position 0 ≤ p ≤ size-1 7. Traverse the list, visiting each entry.
+8. Clear the list to make it empty.
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/97199239-5fa7-4872-802b-99db19ae40a3)
+
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/6a78a560-6a7c-47ea-8771-515c3d32b5a6)
+
+---
+- InsertList(p, e, &l)
+- Let's take a look at pre-conditions and post-conditions for InsertList.
+- Precondition:
+1. The list pl has been created.
+2. not full.
+3. 0 <p< size.
+- Postcondition:
+1. e has been inserted at position p.
+2. all elements at old positions p, p+1, ..., size-1 are incremented by 1.
+3. size increases by 1.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/3d0f9b10-32b6-4021-ad22-bd2b17730b88)
+---
+- DeleteList(p, &e, &l)
+- Let's take a look at pre-conditions and post-conditions for DeleteList.
+- Precondition:
+  1. The list pl has been created.
+  2. The list pl is not empty.
+  3. 0≤ p ≤ size-1.
+  - Postcondition:
+  1. e has been retrieved from position p.
+  2. All elements at old positions p+1, ..., size-1 are decremented by 1.
+  3. size decreases by 1.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/343378f8-1989-4c61-85c4-43e41bd1bf9f)
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4b003c83-c023-4199-a9bf-a32b351c247b)
+
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/f08b7a3b-2f83-4e76-bee2-e52d77f581c0)
+
+---
+- Issues at the user level:
+- How to insert at the beginning of the List?
+- InsertList (0, e, &1);
+- How to insert at the end of the List?
+- InsertList (ListSize(&l), e, &1);
+- How to use it as a stack?
+- Insert at last and pop from it.
+- How to use it as a queue? 
+- Insert at rear and pop from front.
+---
