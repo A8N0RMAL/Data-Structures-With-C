@@ -646,7 +646,9 @@ Customer comes, checks out and leaves
 - How to insert at the end of the List?
 - InsertList (ListSize(&l), e, &1);
 - How to use it as a stack?
+- If we keep adding and removing from the first position (the head of the list).
 - Insert at last and pop from it.
-- How to use it as a queue? 
+- How to use it as a queue?
+- If we keep adding from one end and removing from another end.
 - Insert at rear and pop from front.
 ---
