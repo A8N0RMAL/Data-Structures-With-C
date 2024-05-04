@@ -630,13 +630,13 @@ Customer comes, checks out and leaves
 - DeleteList(p, &e, &l)
 - Let's take a look at pre-conditions and post-conditions for DeleteList.
 - Precondition:
-  1. The list pl has been created.
-  2. The list pl is not empty.
-  3. 0≤ p ≤ size-1.
-  - Postcondition:
-  1. e has been retrieved from position p.
-  2. All elements at old positions p+1, ..., size-1 are decremented by 1.
-  3. size decreases by 1.
+1. The list pl has been created.
+2. The list pl is not empty.
+3. 0≤ p ≤ size-1.
+- Postcondition:
+1. e has been retrieved from position p.
+2. All elements at old positions p+1, ..., size-1 are decremented by 1.
+3. size decreases by 1.
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/343378f8-1989-4c61-85c4-43e41bd1bf9f)
 ---
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4b003c83-c023-4199-a9bf-a32b351c247b)
