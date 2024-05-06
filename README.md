@@ -613,7 +613,7 @@ Customer comes, checks out and leaves
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/6a78a560-6a7c-47ea-8771-515c3d32b5a6)
 
 ---
-- InsertList(p, e, &l)
+#### InsertList(p, e, &l)
 - Let's take a look at pre-conditions and post-conditions for InsertList.
 - Precondition:
 1. The list pl has been created.
@@ -627,7 +627,7 @@ Customer comes, checks out and leaves
 3. size increases by 1.
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/3d0f9b10-32b6-4021-ad22-bd2b17730b88)
 ---
-- DeleteList(p, &e, &l)
+#### DeleteList(p, &e, &l)
 - Let's take a look at pre-conditions and post-conditions for DeleteList.
 - Precondition:
 1. The list pl has been created.
@@ -655,4 +655,65 @@ Customer comes, checks out and leaves
 - How to use it as a queue?
 - If we keep adding from one end and removing from another end.
 - Insert at rear and pop from front.
+---
+### Lists: Linked-based implementation
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/052ddd95-9595-4640-9b17-ad1c105937ed)
+
+---
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/ca0e1434-8232-4fcd-80b6-8609fe8457a0)
+
+---
+#### CreateList(&l), ListEmpty(&l), ListFull(&l), ListSize(&l)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/9ccc7516-446c-4f38-89f4-7817f01784b3)
+
+---
+#### DestroyList(&l), TraverseList(&l, &Visit)
+
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/05fab853-b96e-4ef9-a31e-51d00f41fa17)
+
+---
+#### InsertList(pos, e, &l)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/b6bfb253-a6cb-4d61-a415-d72221690f50)
+
+---
+#### DeleteList(pos, &e, &l)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/717f1feb-3bcf-4232-82be-72865b3d3ec8)
+
+---
+#### RetrieveList(pos, &e, &l), ReplaceList(pos, e, &l)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/dd7ae9ff-01ff-4ea7-b586-5e670e9ab1f1)
+
+---
+- Comparison between the array-based and the linked implementation: "Which is always better?" is a wrong question!
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/25ccbde8-6584-4731-aefb-97595bdf9b15)
+- InsertList is very time consuming for Array-based because of copying elements, especially if the elements are large records.
+- RetrieveList and ReplaceList are always better for contiguous implementation.
+- Read the book very well.
+---
+- Design Enhancement: Learn how you modify your design to enhance the performance.
+- Many applications processes the entries in order, i.e., moving from one entry to the next.
+- Many other applications refer to the same entry many times.
+- Then, our current linked implementation is very inefficient, since it moves from the head to the element every time!
+- Then, we need to remember the last position currentpos and start navigating from it, and we use current to start walking from currentpos.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/0622ff89-b473-46a0-acc8-b5714215a646)
+- Of course, this will not help if the new element is preceding the last element visited.
+- Only the type definition, InsertList, DeleteList, ReplaceList, and RetrieveList will change.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/abf979bb-758f-4fd5-8bd2-65efaba9ddbc)
+
+---
+- Let's modify InsertList.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/c0d34e55-423c-48a6-a6ad-e344f304a6dc)
+---
+- Let's modify DeleteList.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/15b4dacb-244d-4117-abd0-1a539fab41fd)
+---
+- You have to modify ReplaceList and RetrieveList in the same manner. (Do it as a homework). Check also for other functions, e.g., CreateList (for initialization)
+- Compare the previous functions to the functions of the book, where it has a function Set Position that is called from within InsertList and DeleteList.
+- Having this function may simplify the code for the case of having current and currentpos.
+---
+- Design Enhancement: Learn how you modify your design to enhance the performance.
+- Accessing the list at a position preceding currentpos will be slow, since we cannot move back. A possible remedy is using doubly linked list.
+- We need just a pointer, current, not necessarily point to the first node. currentpos will always indicates the order of the current node.
+- Read the code from the book and solve the review problems.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/ba967443-12e1-46eb-b7e6-df1da479d62c)
 ---
