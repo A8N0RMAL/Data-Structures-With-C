@@ -717,3 +717,84 @@ Customer comes, checks out and leaves
 - Read the code from the book and solve the review problems.
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/ba967443-12e1-46eb-b7e6-df1da479d62c)
 ---
+### Search and Analysis of Algorithms
+#### Motivation: Why Search?
+- To find things.
+- We will be concerned only with internal searching in the memory, i.e., in data structures not in external searching in secondary memory, i.e., in files. Nevertheless, there is a strong relationship.
+- Of course we assume that each element has a key to be used for searching. To have our code as general as possible we do not write the code for particular data type.
+- Always, think generally before you start coding; this is to minimize upgrading and modifying your code later on.
+- Our purpose is to study data structures not algorithms, but we want to see the deep connection between both through studying sequential and binary search.
+- Let us see the implementation in C.
+---
+#### TypeDefinition:
+![2](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/45958b95-1d35-43c6-9717-8343c7c7680e)
+
+---
+#### SequentialSearch()
+- Let's take a look at pre-conditions and post-conditions for SequentialSearch.
+- Precondition: List is created.
+- Postcondition: Return the location if element exists O.W return -1.
+- This code is implementation-independent.
+![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/383c5ebf-d8fe-4372-8d32-3f86989b6905)
+---
+#### Analysis Of Algorithms:
+- Definition: The behavior of a key-comparison (because there are other searching techniques) searching algorithm is measured in number of key comparisons.
+- Sequential search: From the previous algorithm it is obvious that if the element is in position i, the number of comparisons k is given by:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/23b3bd4c-bc52-4dd0-a22c-d1dfe2f9db19)
+- k in any algorithm is a random variable whose mean (average) depends on the distribution of the data. The mean is given by:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/10ab229a-44a5-400d-9f85-86af1da2d105)
+- Then, for any algorithm we have to assume a probability distribution for the data. This is a field by itself known as probabilistic analysis of algorithms. For easier analysis we usually assume uniform distribution, i.e.,
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1b8b41e4-ddef-4814-a9ad-d5653cdd270e)
+- This is what is called in book "on average”; they means on average with uniform dist.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/aa8b5cea-02a2-4f80-af9f-e5942c026147)
+- The worst case scenario is when the search is unsuccessful or the element is in last entry. In this case the number of comparisons is n
+- The best case is when the element is in the first position, then the number of comparison is 1.
+#### For unsuccessful search:
+- There is only one case of unsuccessful search that takes n comparisons.
+---
+#### Binary Search
+- Can we speed up the search time? We will assume that we will search in an ordered list.
+- Definition: An ordered list is a list in which each entry contains a key, such that the keys are in order. That is, if entry i comes before entry j in the list, then the key of entry i is less than or equal to the key of entry j.
+- This requires replacing the Insert List with InsertOrder. See the connection between enhancing the algorithms and designing the data structures.
+- We will consider only the second implementation of Binary search, i.e., Binary2 Search. Read the first version from the book.
+- Let us first write InsertOrder.
+---
+#### InsertOrder()
+- Let's take a look at pre-conditions and post-conditions for InsertOrder.
+- Precondition: List is created, not full and ordered.
+- Postcondition: E inserted in order. if the new element has a key equal to an element in the list it will be inserted before it.
+![7](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a060022c-0629-48bb-bbe2-ebf49daf41fd)
+- The following representation is from Knuth "The art of computer programming" (Sec. 6.2.1):
+![8](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/a3c1c37f-4d2a-4379-93a3-7e136c69e2e2)
+![9](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/d88709b4-6406-42d6-ab4a-88c0d2b803fb)
+- It looks recursive; let us try it. The interface has to be:
+##### int RecBinary2Search (KeyType, List *)
+- However, it seems from the table that we need to specify the start and the end.
+- indices. Therefore, we have to write another recursive function and call it in the above.
+---
+#### BinarySearch()
+- Let's take a look at pre-conditions and post-conditions for BinarySearch.
+- Precondition: List is ordered.
+- Postcondition: Location returned, O.W. return -1
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/41fe2592-a89f-4b2f-bf4f-bc037edcf98c)
+---
+#### RecBinary2Search (KeyType, List *)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1ba0c8ca-5581-40f1-b585-f151af653676)
+
+---
+- Let's try it but this time without using stack for wasting of memory, we'll make it iterative...
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/4d78154f-6d8d-4648-bc90-b821678950d8)
+---
+#### Comparison between recursive and iterative side-by-side
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/deb35b18-4c75-4c2e-96f8-9bb16d83078d)
+
+---
+- Another important connection between algorithms and data structures is this. Binary Search is suitable only for the contiguous implementation. However, if we have to place the data in a linked structures (linked list) and be able in the same time to fasten the search what should we do?
+- This will be achieved by implementing the linked list as a binary tree as we will see later (Ch. 9). To see the connection let us see first how we analyze binary search. The idea comes from analyzing the binary search for contiguous implementation.
+- The analysis of Binary Search requires basic definitions and mathematical relations for trees as a mathematical structure NOT yet an ADT data structure.
+![14](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7c10553b-5e45-4071-a441-600f84e65185)
+---
+#### How the different topics are related to each other(Different order of study)
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/5fad71d1-aae6-40af-831a-5787e79101fe)
+
+---
