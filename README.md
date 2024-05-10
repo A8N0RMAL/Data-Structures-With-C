@@ -798,3 +798,49 @@ Customer comes, checks out and leaves
 ![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/5fad71d1-aae6-40af-831a-5787e79101fe)
 
 ---
+### Analysis of Binary Search Algorithm
+#### Main references of the following material are:
+- Knuth, D. E. (1997). The art of computer programming. Reading, Mass., Addison- Wesley.
+- Mahmoud, H. M. (2000). Sorting a distribution theory. New York, John Wiley & Sons.
+![1](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/19a41b8b-c4d1-49db-be3d-70c2b98c04c2)
+---
+#### Basic definitions of Binary Trees (will help also for Ch. 9)
+- Definition: A binary tree is either empty, or it consists of a node (vertex) called the root together with two binary trees called the left subtree and the right subtree of the root.
+- The only node at level 0 is the root.
+- A node may have up to two children in the next level.
+- The children of a node are joined to their parents by links called edges.
+- The shown tree is a general BT, not a BT produced by binary searching.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/277728c8-ba8a-45dd-afa4-63da98582e5b)
+---
+- Definition: The depth (or height) of a node in the tree is the node's distance from the root; i.e., its level.
+- Equivalent Definition (recursive): The depth of a node is 1 + the depth of its parent. And the root is at depth 0.
+- The collection of nodes in the subtree rooted at a node (excluding the node itself) is referred to as its descendants. E.g., descendants of 8 are: 6, 7, 9, 10, 10.
+- The collection of nodes encountered by climbing down (to the root) a path from a node to the root of the whole tree is the node's ancestors (or predecessors). E.g., ancestors of 3 are: 2, 5.
+![3](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/529cdf38-ee6d-499e-99f6-e6dd29782bc5)
+---
+- The depth or height h of a tree: is the maximum height among nodes. Also, we can say 10 tree has only root
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/9728ce3e-8910-47ef-a936-c43d446af163)
+- Outdegree: is the number of edges coming out of a node. In binary trees this is at most 2.
+- Indegree: is the number of edges coming to a node. In any tree this is 1.
+- Lemma: a saturated (with a maximum number of nodes) level l has 2^l nodes.
+- Proof: For l = 0 the statement is true. Assume it is true for some k, then the number of nodes in this level is 2^k. Then, the maximum number of nodes of next level, k+1, is 2 x 2^k=2k+1, which completes the induction.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/747fae5f-47c7-4a5e-8500-c48e33d3d120)
+---
+- Saturated Level: a level with maximum number of nodes.
+- Full Tree: a tree whose all levels are saturated
+- Corollary: If all levels (from 0 to h) are saturated then the tree has 2^(h+1) - 1 nodes
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/304b0103-0781-4654-ace9-c7a6c52fb1fc)
+- Lemma: The height h(n) of a binary tree on n nodes satisfies:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/692566df-87ee-41eb-adfc-e47b9d6c13c3)
+- Proof : The upper bound is trivial. We have from the corollary above:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/dc9f6e93-f723-4401-825f-3a50b5ed4177)
+- But h(n) is integer; therefore
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/1fb99b21-5816-4014-a3fe-83eab7858119)
+- We will show soon that: [lg(n + 1)] - 1 = [lg(n)]
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/7934e0db-9bf5-4aa2-87ea-422d7a3dad35)
+---
+- Complete Tree → is the tree whose all levels are saturated except possibly the last one.
+- Complete Tree → leaves are at the last two levels at most (the converse is not true)
+- Complete Tree → it is the shortest tree for given number of nodes.
+![6](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/38f72032-900b-491b-83ba-9fd81a1ed8f0)
+---
