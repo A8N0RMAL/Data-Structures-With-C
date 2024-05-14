@@ -844,3 +844,29 @@ Customer comes, checks out and leaves
 - Complete Tree → it is the shortest tree for given number of nodes.
 ![6](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/38f72032-900b-491b-83ba-9fd81a1ed8f0)
 ---
+- Lemma: the tree produced by the binary search is complete.
+- Proof: First notice that every split produces two subtrees which differ in size by at most one node. We will show, by induction, that, any node at level L - k, k ≥ 2, (because for k=1 is trivial) having a path to a node at the last level L will have complete subtree. Hence, the root, which has path to any node at last level L, has a complete tree. Consider a node A at the last level L
+- Basis step: Fork = 2, C must have another child than B to have a valid split at C.
+- Induction step: Assume the statement is true for some k; then P has a complete tree. The parent R must have another child Q, so that the split is valid. If Q has any child at L, then it must have a complete tree (by the induction hypothesis, since it is at the level L - k). If Q does not have any child at L, then it must have, as well, complete tree so that the split at R produces two trees different in size by just one node; namely A. For both cases, it turns out that R, which is the only node at level L-(k+1) having path to A, has a complete subtree. Then the statement is true for k+1. Hence, the statement is true for all k. Therefore, for k = L, where (L - k = 0) the statement is true for the root. Hence, the root has a complete tree.
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/66997e4a-8fb7-4907-9cba-b43f6b274c47)
+
+- Theorem: For the binary search algorithm:
+1) the best case takes 1 comparison.
+2) the worst successful case takes h(n) +1= ceil(lg(n+1)) = floor(lg(n)) + 1 comparisons
+3) the unsuccessful case takes exactly h(n)+ 1 if the tree is full, i.e., all levels are saturated and takes either h(n) or h(n)+ 1 otherwise.
+4) no other search method (based on comparison) does better than binary search in the worst case.
+
+- Proof:
+1) is trivial.
+2) We need h(n)+ 1 comparisons for worst case. For any binary tree ceil(lg(n + 1))-1 ≤ h(n). Since our tree is complete, h(n) + 1 = ceil(lg (n + 1)), which is equal to floor(lg(n)) + 1 by the following:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/e77a7008-fdeb-40c6-8457-01c928300374)
+3) Is obvious. The number of comparisons is either h(n) + 1 = ceil(lg(n + 1)) = floor(lg(n)) + 1 (exactly as the worst successful case) if the tree is full; or it is either h +1 (as the case of full tree) or h(n)
+4) Follows directly from the fact that a complete tree has the shortest length for a given number of nodes.
+![8](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/2c5695d1-f782-4784-ab1a-3ac17ab2d481)
+---
+- Now, we will prepare some lemmas for calculating the average case:
+- External node (or leaf), which corresponds to an unsuccessful search: The external binary tree is obtained by adding to each original node, 0, 1, or 2 children of a new distinct type (called external nodes or leaves) to make the outdegree of all the original nodes (now called internal) exactly equal to 2.
+- Lemma: An extended binary tree (not necessarily complete) on n internal vertices has n + 1 leaves.
+- Proof: Let the number of leaves be L(n) (all are external by construction). Every internal node has two children (may be both internal, external, or one of each). Hence, the number of children is 2n. Also, Every node in the tree, except the root is a child. Then the number of children is L(n) + n - 1. Therefore:
+![image](https://github.com/A8N0RMAL/Data-Structures-With-C/assets/119806250/8024c6b5-fb76-4b60-bbcb-09fa448312e2)
+---
